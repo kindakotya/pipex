@@ -6,7 +6,7 @@
 /*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 23:45:54 by gmayweat          #+#    #+#             */
-/*   Updated: 2021/07/27 08:11:51 by gmayweat         ###   ########.fr       */
+/*   Updated: 2021/07/27 10:41:51 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ typedef struct s_pipex
 	char		*heredoc;
 	char		***argvs;
 	char		**path;
-	int			fd01[2];
+	int			**pipes_fd;
 	int			fd0;
 	int			fd1;
 	int			err;
@@ -35,5 +35,4 @@ typedef struct s_pipex
 int	cmd_alloc(t_pipex *all, int argc, char **argv, char **env);
 int	heredoc_way(t_pipex *all, int argc, char **argv);
 int	pipex(t_pipex *all, char **env);
-int	pipex_err(t_pipex *all, int f);
 #endif
